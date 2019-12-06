@@ -58,3 +58,42 @@ list.add(1);
 list.add(2);
 list.remove();
 console.log(list);
+
+class NodeWithTwoPointers{
+    constructor (val, next, prev){
+        this.val = val;
+        this.next = next;
+        this.prev = prev;
+    }
+}
+
+class DoubleList{
+    constructor (){
+        this.head = null;
+        this.tail = null;
+    }
+
+    add(val){
+        if (this.head === null && this.tail === null){
+            let newNode = new NodeWithTwoPointers(val, this.head, this.tail);
+            this.head = newNode;
+            this.tail = newNode;
+        } else{
+            let newNode = new NodeWithTwoPointers(val, this.head, this.tail);
+            this.head = newNode;
+        }
+    }
+
+    remove(){
+        if (this.head === null && this.tail === null){
+            return null;
+        } 
+    }
+}
+
+
+let doubleList = new DoubleList();
+doubleList.add(1);
+doubleList.add(2);
+doubleList.add(3);
+console.log(doubleList);
